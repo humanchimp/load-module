@@ -1,6 +1,6 @@
-# 🐣hatch
+# load-module 
 
-rollup + typescript boilerplate
+The `loadModule` capability of rollup as its own package
 
 ## license
 

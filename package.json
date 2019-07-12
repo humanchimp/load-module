@@ -1,23 +1,24 @@
 {
-  "name": "@topl/hatch",
+  "name": "@topl/load-module",
   "version": "1.0.0",
-  "main": "dist/cjs/hatch.js",
-  "module": "dist/esm/hatch.js",
-  "browser": "dist/iife/hatch.js",
-  "typings": "dist/hatch.d.ts",
+  "main": "dist/cjs/load-module.js",
+  "module": "dist/esm/load-module.js",
+  "browser": "dist/iife/load-module.js",
+  "typings": "dist/load-module.d.ts",
   "license": "MIT",
   "scripts": {
     "test": "stable",
     "build": "rollup -c rollup.config.js",
-    "prepublishOnly": "yarn test && yarn build && mv dist/cjs/hatch.d.ts* dist && rm dist/*/hatch.d.ts*"
+    "prepublishOnly": "yarn test && yarn build && mv dist/cjs/load-module.d.ts* dist && rm dist/*/load-module.d.ts*"
   },
   "devDependencies": {
-    "@topl/stable": "^0.5.22",
+    "@topl/stable": "^0.5.23",
     "@wessberg/rollup-plugin-ts": "^1.1.61",
+    "chai": "^4.2.0",
     "nyc": "^14.1.1",
-    "rollup": "^1.16.6",
     "prettier": "^1.17.1",
-    "rollup-plugin-multi-entry": "^2.1.0",
+    "rollup": "^1.16.7",
+    "tmp-promise": "^2.0.2",
     "typescript": "^3.5.1"
   },
   "nyc": {
@@ -27,5 +28,9 @@
     "proseWrap": "never",
     "singleQuote": false,
     "trailingComma": "all"
+  },
+  "dependencies": {
+    "rollup-plugin-commonjs": "^10.0.1",
+    "rollup-plugin-node-resolve": "^5.2.0"
   }
 }
